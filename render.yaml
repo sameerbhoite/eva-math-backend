@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: eva-math-algebra-1-backend
+    env: python
+    buildCommand: ""
+    startCommand: uvicorn eva_math_backend:app --host 0.0.0.0 --port 8000
+    plan: free
