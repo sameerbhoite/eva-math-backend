@@ -25,7 +25,7 @@ def generate_linear_equation(difficulty):
     return {"question": question, "answer": round(answer, 2), "difficulty": difficulty}
 
 
-@app.get("https://eva-math-backend.onrender.com/api/generate-weekly-quiz")
+@app.get("/api/generate-weekly-quiz")
 def generate_weekly_quiz():
     quiz = []
     difficulties = ['easy'] * 10 + ['medium'] * 10 + ['hard'] * 5
