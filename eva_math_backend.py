@@ -37,14 +37,12 @@ def generate_weekly_quiz():
     return {"quiz": quiz}
 
 
-# Test block — useful if running locally, ignored in deployment
-if __name__ == "__main__":
-    print("Running test cases for generate_linear_equation:")
-    for level in ['easy', 'medium', 'hard']:
-        sample = generate_linear_equation(level)
-        print(f"Difficulty: {level}", sample)
+@app.get("/")
+def home():
+    return {"message": "Eva Math Algebra 1 Backend is running. Use /api/generate-weekly-quiz to get a quiz."}
 
-    print("\nRunning test case for generate_weekly_quiz:")
-    sample_quiz = generate_weekly_quiz()
-    print(f"Total questions generated: {len(sample_quiz['quiz'])}")
-    assert len(sample_quiz['quiz']) == 25, "Quiz should contain exactly 25 questions."
+
+# Optional: Local testing block
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("eva_math_backend:app", host="0.0.0.0", port=8000, reload=True)
