@@ -4,5 +4,5 @@ services:
     env: python
     plan: free  # Or 'starter', 'pro', depending on your Render plan
     buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn eva_math_backend:app --host 0.0.0.0 --port 8000
+    startCommand: uvicorn eva-math-backend:app --host 0.0.0.0 --port 8000
     autoDeploy: true
